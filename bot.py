@@ -1,6 +1,10 @@
+import asyncio
 from pyrogram import Client, filters
 from character import get_reply
 from memory import remember, recall
+
+# Olay döngüsünü ayarla
+asyncio.set_event_loop(asyncio.new_event_loop())
 
 app = Client("catlakbot")
 
