@@ -1,0 +1,25 @@
+{
+  "name": "atlakbot",
+  "description": "A Telegram bot deployed on Heroku",
+  "repository": "https://github.com/askimyavas7-tech/-atlakbot",
+  "scripts": {
+    "postdeploy": "echo 'Bot deployed successfully!'"
+  },
+  "env": {
+    "API_ID": {
+      "required": true
+    },
+    "API_HASH": {
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
