@@ -7,10 +7,12 @@
   },
   "env": {
     "API_ID": {
-      "required": true
+      "required": true,
+      "value": "YOUR_API_ID"
     },
     "API_HASH": {
-      "required": true
+      "required": true,
+      "value": "YOUR_API_HASH"
     },
     "BOT_TOKEN": {
       "required": true
@@ -19,7 +21,7 @@
   "formation": {
     "worker": {
       "quantity": 1,
-      "size": "free"
+      "size": "Standard-1X"
     }
   }
 }
