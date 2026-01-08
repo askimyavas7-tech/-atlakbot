@@ -3,16 +3,19 @@ from pyrogram import Client, filters
 from character import get_reply
 from memory import remember, recall
 
-# Olay döngüsünü ayarla
-asyncio.set_event_loop(asyncio.new_event_loop())
-
 app = Client("catlakbot")
 
 @app.on_message(filters.text & ~filters.bot)
-def handle(client, message):
+async def handle(client, message):
     user_id = message.from_user.id
     remember(user_id, message.text)
-    reply = get_reply(message.text, recall(user_id), message.chat.type)
-    message.reply_text(reply)
+    reply = await get_reply(message.text, recall(user_id), message.chat.type)
+    await message.reply_text(reply)
 
-app.run()
+async def main():
+    await app.start()
+    print("Bot is running...")
+    await app.idle()
+
+if __name__ == "__main__":
+    asyncio.run(main())
